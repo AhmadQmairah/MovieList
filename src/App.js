@@ -1,14 +1,14 @@
 import React from "react";
 import MovieList from "./MovieList";
 import AddMovie from "./AddMovie";
-import { connect } from "react-redux";
+
 function App() {
   return (
     <div className="container">
       <AddMovie />
       <div className="row ">
         <div className="col-6">
-          <h6 class="text-center">WatchList</h6>
+          <h6 className="text-center">WatchList</h6>
           <MovieList watched={false} key="WishList" />
         </div>
 

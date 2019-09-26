@@ -31,8 +31,8 @@ const reducer = (state = initialState, action) => {
 
     case "TOGGLE_WATCHED":
       let RealIndex = action.payload;
-      state.movies.find((movie, index) => {
-        if (movie.id == action.payload) {
+      state.movies.forEach((movie, index) => {
+        if (movie.id === action.payload) {
           RealIndex = index;
         }
       });
@@ -45,16 +45,6 @@ const reducer = (state = initialState, action) => {
         movies: movies
       };
     case "DELETE":
-      // let RealIndex = action.payload;
-      // state.movies.find((movie, index) => {
-      //   if (movie.id == action.payload) {
-      //     RealIndex = index;
-      //   }
-      // });
-      // let movies = [...state.movies];
-
-      // movies[RealIndex].watched = !movies[RealIndex].watched;
-
       return {
         ...state,
         movies: state.movies.filter(movie => movie.id !== action.payload)

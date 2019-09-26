@@ -4,19 +4,19 @@ import addmovie, { setInput } from "./redux/actions";
 class AddMovie extends React.Component {
   render() {
     return (
-      <div class="input-group mb-3 container w-25 mt-5">
+      <div className="input-group mb-3 container w-25 mt-5">
         <input
           type="text"
-          class="form-control"
+          className="form-control"
           placeholder="Movie"
           aria-label="Recipient's username"
           aria-describedby="basic-addon2"
           onChange={event => this.props.setInput(event.target.value)}
         />
 
-        <div class="input-group-append">
+        <div className="input-group-append">
           <button
-            class="btn btn-outline-secondary"
+            className="btn btn-outline-secondary"
             type="button"
             onClick={() => this.props.addMovie(this.props.input)}
           >
