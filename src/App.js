@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import MovieList from "./MovieList";
+import AddMovie from "./AddMovie";
+import { connect } from "react-redux";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <AddMovie />
+      <div className="row ">
+        <div className="col-6">
+          <h6 class="text-center">WatchList</h6>
+          <MovieList watched={false} key="WishList" />
+        </div>
+
+        <div className="col-6">
+          <h6 className="text-center">Watched</h6>
+          <MovieList watched={true} key="WatchList" />
+        </div>
+      </div>
     </div>
   );
 }
